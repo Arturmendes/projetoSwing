@@ -43,7 +43,7 @@ public class JanelaBaskaraSwing extends JFrame implements ActionListener{
 	
 	
 	public JanelaBaskaraSwing() {
-		super("Fórmula de Baskara");
+		super("Fï¿½rmula de Baskara");
 				
 		container = this.getContentPane();
 		container.setLayout(new FlowLayout());
@@ -92,7 +92,7 @@ public class JanelaBaskaraSwing extends JFrame implements ActionListener{
 		container.add(lbResultX2);
 		container.add(btLimpar);
 		
-		container.setBackground(Color.GREEN);
+		container.setBackground(Color.YELLOW);
 		
 		btCalcular.addActionListener( this );
 		btLimpar.addActionListener( this );
