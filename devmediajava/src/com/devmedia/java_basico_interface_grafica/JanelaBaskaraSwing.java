@@ -139,20 +139,48 @@ public class JanelaBaskaraSwing extends JFrame implements ActionListener{
 	}
 
 	private void calcular() {
-		//entrada
-		double a = Double.parseDouble( tfA.getText() );
-		double b = Double.parseDouble( tfB.getText() );
-		double c = Double.parseDouble( tfC.getText() );
+		if( isCamposConsistentes() ) {
+			//entrada
+			double a = Double.parseDouble( tfA.getText() );
+			double b = Double.parseDouble( tfB.getText() );
+			double c = Double.parseDouble( tfC.getText() );
+			
+			//processamento
+			double delta = Math.pow(b,  2) - 4 * a * c;
+			
+			double x1 = (-b + Math.sqrt(delta)) / (2 * a);
+			double x2 = (-b - Math.sqrt(delta)) / (2 * a);
+			
+			//saída
+			lbResultX1.setText( String.valueOf( x1 ) );
+			lbResultX2.setText( String.valueOf( x2 ) );
+		}else {
+			JOptionPane.showMessageDialog(this, "Campos inconsistentes.");
+		}
+	}
+
+	private boolean isCamposConsistentes() {
+		String a = tfA.getText().trim();//Método trim(), serve para retirar os espaços em branco, após o conteúdo digitado.
+		String b = tfB.getText().trim();
+		String c = tfC.getText().trim();
 		
-		//processamento
-		double delta = Math.pow(b,  2) - 4 * a * c;
+		if(a.isBlank() || b.isBlank() || c.isBlank()) {
+			tfA.requestFocus();
+			return false;
+		}
 		
-		double x1 = (-b + Math.sqrt(delta)) / (2 * a);
-		double x2 = (-b - Math.sqrt(delta)) / (2 * a);
+		try {
+			Double.parseDouble(a);
+			Double.parseDouble(b);
+			Double.parseDouble(c);
+			
+		} catch (Exception e) {
+			tfA.requestFocus();
+			return false;
+		}
 		
-		//saída
-		lbResultX1.setText( String.valueOf( x1 ) );
-		lbResultX2.setText( String.valueOf( x2 ) );
+		return true;
+		
 	}
 
 	
