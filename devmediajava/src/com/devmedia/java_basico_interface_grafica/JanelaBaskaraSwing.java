@@ -43,7 +43,7 @@ public class JanelaBaskaraSwing extends JFrame implements ActionListener{
 	
 	
 	public JanelaBaskaraSwing() {
-		super("F�rmula de Baskara");
+		super("Fórmula de Baskara");
 				
 		container = this.getContentPane();
 		container.setLayout(new FlowLayout());
@@ -139,15 +139,18 @@ public class JanelaBaskaraSwing extends JFrame implements ActionListener{
 	}
 
 	private void calcular() {
+		//entrada
 		double a = Double.parseDouble( tfA.getText() );
 		double b = Double.parseDouble( tfB.getText() );
 		double c = Double.parseDouble( tfC.getText() );
 		
+		//processamento
 		double delta = Math.pow(b,  2) - 4 * a * c;
 		
 		double x1 = (-b + Math.sqrt(delta)) / (2 * a);
 		double x2 = (-b - Math.sqrt(delta)) / (2 * a);
 		
+		//saída
 		lbResultX1.setText( String.valueOf( x1 ) );
 		lbResultX2.setText( String.valueOf( x2 ) );
 	}
