@@ -126,7 +126,7 @@ public class JanelaPrincipal extends JFrame implements ActionListener{
 			System.exit(0);
 		}else if(e.getSource() == miSobre) {
 			//JOptionPane.showMessageDialog(this, "Programa desenvolvido para o portal devmedia");
-			new JanelaSobre();
+			new JanelaSobre( this );
 		}
 		
 		
@@ -167,6 +167,10 @@ public class JanelaPrincipal extends JFrame implements ActionListener{
 		String b = tfB.getText().trim();
 		String c = tfC.getText().trim();
 		
+		System.out.println(a);
+		System.out.println(b);
+		System.out.println(c);
+		
 		if(a.isBlank() || b.isBlank() || c.isBlank()) {
 			tfA.requestFocus();
 			return false;
@@ -185,6 +189,48 @@ public class JanelaPrincipal extends JFrame implements ActionListener{
 		return true;
 		
 	}
+
+	public JTextField getTfA() {
+		return tfA;
+	}
+
+	public void setTfA(JTextField tfA) {
+		this.tfA = tfA;
+	}
+
+	public JTextField getTfB() {
+		return tfB;
+	}
+
+	public void setTfB(JTextField tfB) {
+		this.tfB = tfB;
+	}
+
+	public JTextField getTfC() {
+		return tfC;
+	}
+
+	public void setTfC(JTextField tfC) {
+		this.tfC = tfC;
+	}
+
+	public JLabel getLbResultX1() {
+		return lbResultX1;
+	}
+
+	public void setLbResultX1(JLabel lbResultX1) {
+		this.lbResultX1 = lbResultX1;
+	}
+
+	public JLabel getLbResultX2() {
+		return lbResultX2;
+	}
+
+	public void setLbResultX2(JLabel lbResultX2) {
+		this.lbResultX2 = lbResultX2;
+	}
+	
+	
 
 	
 
