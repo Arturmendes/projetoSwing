@@ -104,6 +104,8 @@ public class JanelaPrincipal extends JFrame implements ActionListener{
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		this.pack();
+		this.setLocationRelativeTo(null);
+		
 		this.setVisible(true);
 		
 	}
@@ -124,6 +126,7 @@ public class JanelaPrincipal extends JFrame implements ActionListener{
 			System.exit(0);
 		}else if(e.getSource() == miSobre) {
 			//JOptionPane.showMessageDialog(this, "Programa desenvolvido para o portal devmedia");
+			new JanelaSobre();
 		}
 		
 		
