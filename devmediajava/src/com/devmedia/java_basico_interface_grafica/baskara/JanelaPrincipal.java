@@ -1,4 +1,4 @@
-package com.devmedia.java_basico_interface_grafica;
+package com.devmedia.java_basico_interface_grafica.baskara;
 
 import java.awt.Color;
 import java.awt.Container;
@@ -17,7 +17,7 @@ import javax.swing.JTextField;
 
 
 @SuppressWarnings("serial")
-public class JanelaBaskaraSwing extends JFrame implements ActionListener{
+public class JanelaPrincipal extends JFrame implements ActionListener{
 	
 	private JButton btCalcular;
 	private JButton btLimpar;
@@ -42,7 +42,7 @@ public class JanelaBaskaraSwing extends JFrame implements ActionListener{
 	
 	
 	
-	public JanelaBaskaraSwing() {
+	public JanelaPrincipal() {
 		super("Fórmula de Baskara");
 				
 		container = this.getContentPane();
@@ -110,7 +110,7 @@ public class JanelaBaskaraSwing extends JFrame implements ActionListener{
 
 	public static void main(String[] args) {
 		
-		new JanelaBaskaraSwing();
+		new JanelaPrincipal();
 		
 	}
 
@@ -123,7 +123,7 @@ public class JanelaBaskaraSwing extends JFrame implements ActionListener{
 		}else if(e.getSource() == miSair ) {
 			System.exit(0);
 		}else if(e.getSource() == miSobre) {
-			JOptionPane.showMessageDialog(this, "Programa desenvolvido para o portal devmedia");
+			//JOptionPane.showMessageDialog(this, "Programa desenvolvido para o portal devmedia");
 		}
 		
 		
