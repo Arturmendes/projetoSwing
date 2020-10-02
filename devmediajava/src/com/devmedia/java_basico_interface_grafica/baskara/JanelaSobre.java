@@ -3,16 +3,19 @@ package com.devmedia.java_basico_interface_grafica.baskara;
 import java.awt.Container;
 import java.awt.GridLayout;
 
+import javax.swing.JDialog;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
-public class JanelaSobre extends JFrame {
+public class JanelaSobre extends JDialog {
 
 	private static final long serialVersionUID = 1L;
 	
 	private Container container;
 	private JanelaPrincipal janelaPrincipal;
 	
+	
+	/*
 	public JanelaSobre() {
 		super("Sobre...");
 		
@@ -36,9 +39,11 @@ public class JanelaSobre extends JFrame {
 		
 		
 	}
+	*/
 	
 	public JanelaSobre(JanelaPrincipal janelaPrincipal) {
-		super("Dados da Janela Principal");
+		super(janelaPrincipal, true);
+		this.setTitle("Sobre...");
 		this.janelaPrincipal = janelaPrincipal;
 		
 		container = this.getContentPane();
