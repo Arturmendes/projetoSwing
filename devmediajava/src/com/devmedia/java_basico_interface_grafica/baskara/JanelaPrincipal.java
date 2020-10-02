@@ -17,7 +17,7 @@ import javax.swing.JTextField;
 
 
 @SuppressWarnings("serial")
-public class JanelaPrincipal extends JFrame implements ActionListener{
+public class JanelaPrincipal extends JFrame{
 	
 	private JButton btCalcular;
 	private JButton btLimpar;
@@ -94,11 +94,41 @@ public class JanelaPrincipal extends JFrame implements ActionListener{
 		
 		container.setBackground(Color.YELLOW);
 		
-		btCalcular.addActionListener( this );
-		btLimpar.addActionListener( this );
-		miNovo.addActionListener( this );
-		miSair.addActionListener( this );
-		miSobre.addActionListener( this );
+		btCalcular.addActionListener( new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				btCalcularOnClick();
+			}
+		} );
+		btLimpar.addActionListener( new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				btLimparOnClick();
+			}
+		} );
+		miNovo.addActionListener( new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				miNovoOnClick();
+			}
+		} );
+		miSair.addActionListener( new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				miSairOnClick();
+			}
+		} );
+		miSobre.addActionListener( new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				miSobreOnClick();
+			}
+		} );
 		
 		
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -110,26 +140,45 @@ public class JanelaPrincipal extends JFrame implements ActionListener{
 		
 	}
 
+	
+
+	
+
+
+
+	private void miSobreOnClick() {
+		new JanelaSobre( this );
+	}
+
+
+
+
+
+
+
+	protected void miSairOnClick() {
+		System.exit(0);
+	}
+
+
+
+
+
+
+
 	public static void main(String[] args) {
 		
 		new JanelaPrincipal();
 		
 	}
 
-	@Override
-	public void actionPerformed(ActionEvent e) {
-		if( e.getSource() == btCalcular ) {			
-			calcular();
-		}else if( e.getSource() == btLimpar || e.getSource() == miNovo ) {
-			limpar();
-		}else if(e.getSource() == miSair ) {
-			System.exit(0);
-		}else if(e.getSource() == miSobre) {
-			//JOptionPane.showMessageDialog(this, "Programa desenvolvido para o portal devmedia");
-			new JanelaSobre( this );
-		}
+	private void miNovoOnClick() {
+		limpar();
 		
-		
+	}
+	
+	private void btLimparOnClick() {
+		limpar();
 		
 	}
 
@@ -141,7 +190,7 @@ public class JanelaPrincipal extends JFrame implements ActionListener{
 		lbResultX2.setText("0.0");
 	}
 
-	private void calcular() {
+	private void btCalcularOnClick() {
 		if( isCamposConsistentes() ) {
 			//entrada
 			double a = Double.parseDouble( tfA.getText() );
