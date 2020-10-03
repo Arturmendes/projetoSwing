@@ -16,7 +16,7 @@ import javax.swing.JTextField;
 
 
 
-@SuppressWarnings("serial")
+
 public class JanelaPrincipal extends JFrame{
 	
 	private JButton btCalcular;
